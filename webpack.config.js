@@ -3,8 +3,10 @@ const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const appDirectory = fs.realpathSync(process.cwd());
+
 const resolveAppPath = (relativePath) =>
   path.resolve(appDirectory, relativePath);
+
 module.exports = {
   mode: "development",
   entry: ['babel-polyfill',resolveAppPath("src")],
@@ -63,8 +65,10 @@ module.exports = {
       },
       {
         test: /\.html$/,
+        exclude: [/node_modules/, require.resolve('./public/index.html')],
         use: {
           loader: "html-loader",
+          
         },
       },
     ],
