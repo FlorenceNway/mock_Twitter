@@ -7,7 +7,6 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: $m-size;
 
     input {
         background: transparent;
@@ -15,9 +14,10 @@ form {
         width: 70%;
         padding: 5px;
         border: none;
-        border-bottom: 1px solid #FAFF00;
+        border-bottom: 1px solid $yellow;
         margin-bottom: 7px;
         color: #fff;
+        font-size: $s-size;
     }
     ::placeholder {
         font-family: Roboto;
@@ -29,8 +29,10 @@ form {
     .loginBtn {
         display: block;
         margin: 10px auto;
-        background: #f8f850;
+        background:$yellow;
         border-radius: 5px;
         padding: 5px 10px;
+        font-weight: 700;
+        font-size: $s-size;
     }
 }
