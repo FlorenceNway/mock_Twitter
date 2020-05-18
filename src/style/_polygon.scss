@@ -1,10 +1,11 @@
+
 .polygon6 {
     position: absolute;
     width: 224.69px;
     height: 211.28px;
     left: 43.33px;
     top: -125px;
-    background: #FAFF00;
+    background: $yellow;
     transform: rotate(41.26deg);
 }
 
@@ -13,8 +14,8 @@
     width: 81px;
     height: 81px;
     left: 224.41px;
-    top: 789px;
-    background: rgba(250, 255, 0, 0.8);
+    bottom: -43px;
+    background: $yellow;
     transform: rotate(41.26deg);
 }
 
@@ -24,30 +25,38 @@
     height: 250.16px;
     left: -143.49px;
     top: -211px;
-    background: #DD00F0;
+    background: $purple;
     transform: rotate(27.26deg);
+}
+
+.polygon3 {
+    position: absolute;
+    right: 10px;
+    top: 73.35px;
+    transform: rotate(114.31deg);
 }
 
 .polygon2 {
     position: absolute;
-    width: 90px;
-    height: 86px;
+    width: 85px;
+    height: 78px;
     left: -49.59px;
-    top: 688px;
-    background: rgba(221, 0, 240, 0.8);
+    top: 520px;
+    background: $purple;
     transform: rotate(46.26deg);
 }
-
 
 .polygon1 {
     position: absolute;
     width: 56px;
     height: 222px;
-    left: 416.41px;
+    // left: 416.41px; */
+    right: -95px;
     top: 400px;
-    background: rgba(221, 0, 243, 0.8);
+    background: $purple;
     transform: rotate(51.26deg);
 }
+
 .polygonImg {
     img {
         position: absolute;
