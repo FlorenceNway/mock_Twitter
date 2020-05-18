@@ -4,9 +4,9 @@ import './images/polygon3.png'
 import './images/polygon5.png'
 import './images/polygon6.png'
 import './images/sitting4.png'
-import API from './API'
-import {loginBtn} from './login'
-import Login from './login'
+import API from './js/API'
+import {loginBtn} from './js/login'
+import Login from './js/login'
 
 API.getTweets()
 
