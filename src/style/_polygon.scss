@@ -12,45 +12,55 @@
     position: absolute;
     width: 81px;
     height: 81px;
-    left: 271.41px;
-    top: 835px;
+    left: 224.41px;
+    top: 789px;
     background: rgba(250, 255, 0, 0.8);
     transform: rotate(41.26deg);
 }
 
 .polygon4 {
     position: absolute;
-    width: 298.1px;
-    height: 313.16px;
-    left: -99.49px;
+    width: 284.1px;
+    height: 250.16px;
+    left: -143.49px;
     top: -211px;
     background: #DD00F0;
-    transform: rotate(41.26deg);
+    transform: rotate(27.26deg);
 }
 
 .polygon2 {
     position: absolute;
-    width: 81px;
-    height: 81px;
-    left: 0.41px;
+    width: 90px;
+    height: 86px;
+    left: -49.59px;
     top: 688px;
     background: rgba(221, 0, 240, 0.8);
-    transform: rotate(41.26deg);
+    transform: rotate(46.26deg);
 }
+
 
 .polygon1 {
     position: absolute;
-    width: 79px;
-    height: 206px;
-    left: 410.41px;
-    top: 448px;
-    background: rgba(221, 0, 240, 0.8);
-    transform: rotate(64.26deg);
+    width: 56px;
+    height: 222px;
+    left: 416.41px;
+    top: 400px;
+    background: rgba(221, 0, 243, 0.8);
+    transform: rotate(51.26deg);
+}
+.polygonImg {
+    img {
+        position: absolute;
+        left: 24px;
+        top: -52px;
+    }
 }
 
 .login_img {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto;
-    
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
