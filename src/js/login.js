@@ -1,10 +1,13 @@
-export const loginBtn = document.querySelector('.loginBtn')
-const userLogin = () => {
-    console.log('click Login btn')  
+
+const loginBtn = document.querySelector('.loginBtn')
+
+const userLogin = (users) => {
+    const input = document.querySelector('input')
+    console.log(input.value, users)
 }
 
 export default {
-    userLogin
+    userLogin, loginBtn
 }
 
 
