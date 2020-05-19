@@ -1,16 +1,14 @@
 import './style/style.scss'
-import './images/polygon1.png'
-import './images/polygon3.png'
-import './images/polygon5.png'
-import './images/polygon6.png'
-import './images/sitting4.png'
 import API from './js/API'
-import {loginBtn} from './js/login'
 import Login from './js/login'
+import Render from './js/render'
 
 API.getTweets()
+Render.renderLoginPage()
 
+Login.loginBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
 
-loginBtn.addEventListener('click', () => {
-    Login.userLogin()
+    const users = await API.getUsers()
+    Login.userLogin(users)
 })
