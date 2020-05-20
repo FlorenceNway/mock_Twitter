@@ -3,9 +3,9 @@ import polygon3 from '../images/polygon3.png'
 import polygon5 from '../images/polygon5.png'
 import polygon6 from '../images/polygon6.png'
 import sitting from '../images/sitting4.png'
+const content = document.querySelector('.content')
 
 const renderLoginPage = () => {
-    const content = document.querySelector('.content')
     const loginPage = `<div class='polygon1'><img src="${polygon1}" alt="polygon"></div>
                         <div class='polygon2'></div>
                         <div class='polygon3'><img src="${polygon3}" alt="polygon"></div>
@@ -24,6 +24,22 @@ const renderLoginPage = () => {
     content.innerHTML += loginPage;                    
 }
 
+const renderHomepage = (tweets) => {
+
+    content.innerHTML = ''
+    const div = document.createElement('div')
+
+    console.log(tweets)
+    tweets.forEach(tweet => {
+        console.log(tweet.content)
+        div.style.color = 'white'
+        div.innerHTML += `<p>content : ${tweet.content}</p>`
+    })
+   
+    content.appendChild(div)
+
+}
+
 export default {
-    renderLoginPage
+    renderLoginPage, renderHomepage
 }
