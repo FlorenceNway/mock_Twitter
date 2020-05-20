@@ -29,11 +29,9 @@ const renderHomepage = (tweets) => {
     content.innerHTML = ''
     const div = document.createElement('div')
 
-    console.log(tweets)
     tweets.forEach(tweet => {
-        console.log(tweet.content)
         div.style.color = 'white'
-        div.innerHTML += `<p>content : ${tweet.content}</p>`
+        div.innerHTML += `<div>${tweet.content}</div>`
     })
    
     content.appendChild(div)
