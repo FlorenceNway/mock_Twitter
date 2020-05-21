@@ -2,19 +2,12 @@
 //@import '../images/TopBackground.svg';
 //@import '../images/sitting4.png';
 
-.tweet {
-    width: 80%;
-    height: 150px;
-    margin: auto;
-    border: 1px solid white;
-}
-
 .contentBg {
-    background-color: #fff;
+    background-color: $white;
 }
 
 .userInfo {
-    color: white;
+    color:$white;
     display: flex;
     width: 100%;
     height: 272px;
@@ -23,13 +16,12 @@
 }
 
 .avatar {
-    width: 25%;
+    width: 26%;
     height: 95px;
-    height: 100;
-    margin: 40px 10px 0 20px;
-    border: 1px solid #f8f4f4;
+    margin: 40px 5px 0 10px;
     border-radius: 50%;
-    background: no-repeat center url('../images/camera.png') #faff00 ;
+    background: no-repeat center url('../images/camera.png') $yellow;
+
     input {
         width: 90%;
         margin: 7px 0 0 5px;
@@ -42,12 +34,11 @@
 .userDetail {
     display: flex;
     flex-wrap: wrap;
-    width: 65%;
+    width: 72%;
     height: 30%;
     font-family: 'Roboto', sans-serif;
-    margin: 40px 10px;
+    margin: 40px 5px;
     font-weight: 100;
-   
 
     p {
         padding: 6px 8px 15px;
@@ -65,6 +56,7 @@
     p:nth-child(4),p:nth-child(5) {
         margin: 20px 0;
         border-bottom: 1px solid purple;
+        width: 40%;
         position: relative;
         font-size: $xs-size;
     }
@@ -72,8 +64,37 @@
         content: '';
         padding: 0.2px;
         width: 46%;
-        background: white;
+        background: $white;
         position: absolute;
         top: 177px;
     }
+}
+// ============= TWEETS ==============================
+.tweet {
+    width: 80%;
+    height: auto;
+    margin: 15px auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 4px;
+    
+    .user_data {
+        background-color: #FAFF00;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    .tweetContent {
+        min-height: 70px;
+        height: auto;
+        padding: 15px;
+    }
+    .like_share {
+        display: flex;
+        width: 70%;
+        margin: auto;
+        justify-content: space-evenly;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+    }
+
 }
