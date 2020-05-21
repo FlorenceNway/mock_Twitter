@@ -43,24 +43,23 @@
 
     p {
         padding: 6px 8px 15px;
-        font-family: 'Roboto:ital', sans-serif;
-    }
-    p:first-child {
-        width: 100%;
-        font-size: $m-size;
-        font-style: initial;
-    }
-    p:nth-child(2),p:nth-child(3) {
-        margin: -10px 0;
-        font-style: italic;
-    }
-    p:nth-child(4),p:nth-child(5) {
-        margin: 12px 0;
-        border-bottom: 1px solid purple;
-        width: 40%;
-        position: relative;
-        font-size: $xs-size;
-    }
+        &:first-child {
+            width: 100%;
+            font-size: $m-size;
+            font-style: initial;
+        }
+        &:nth-child(2),&:nth-child(3) {
+            margin: -10px 0;
+            font-style: italic;
+        }
+        &:nth-child(4),&:nth-child(5) {
+            margin: 12px 0;
+            border-bottom: 1px solid purple;
+            width: 40%;
+            position: relative;
+            font-size: $xs-size;
+        }
+    }   
     &::after {
         content: '';
         display: block;
@@ -68,7 +67,7 @@
         width: 60%;
         position: absolute;
         top: 125px;
-    }
+    } 
 }
 // ============= TWEETS ==============================
 .tweets {
@@ -80,7 +79,7 @@
     height: auto;
     margin: 15px auto;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 4px;
+    border-radius: 5px;
     background-color: $white;
     
     .user_data {
@@ -88,6 +87,11 @@
         display: flex;
         justify-content: space-between;
         padding: 10px;
+
+        p:first-child {
+            font-style: italic;
+            font-weight: bold;
+        }
     }
     .tweetContent {
         min-height: 70px;
