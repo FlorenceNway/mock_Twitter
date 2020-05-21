@@ -33,9 +33,7 @@ const renderTweetpage = (user,tweets) => {
 
     const userInfo = document.createElement('div')
     userInfo.classList.add('userInfo')
-    
     let username = user[0].name.split(" ").join("").toLowerCase()
-    
     userInfo.innerHTML = `<div class="avatar">
                                 <input type=file>
                             </div>
@@ -51,7 +49,19 @@ const renderTweetpage = (user,tweets) => {
     tweetsData.classList.add('tweets')
     tweets.forEach(tweet => {
         tweetsData.style.color = 'black'
-        tweetsData.innerHTML += `<div class='tweet'>${tweet.content}</div>`
+        tweetsData.innerHTML += `<div class='tweet'>
+                                    <div class='user_data'>
+                                        <p>${user[0].name}</p>
+                                        <p>${tweet.date}</p>
+                                    </div>
+                                    <div class='tweetContent'>
+                                        <p>${tweet.content}</p>
+                                    </div>
+                                    <div class='like_share'>
+                                        <p>likes:${tweet.likes}</p>
+                                        <p>retweets:${tweet.retweets}</p>
+                                        <p>comments: ${tweet.comments.length}</p>
+                                    </div></div>` 
     })
    
     content.appendChild(userInfo)
