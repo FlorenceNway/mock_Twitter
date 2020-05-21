@@ -24,20 +24,41 @@ const renderLoginPage = () => {
     content.innerHTML += loginPage;                    
 }
 
-const renderHomepage = (tweets) => {
+const renderTweetpage = (user,tweets) => {
+    console.log(user, tweets)
 
     content.innerHTML = ''
-    const div = document.createElement('div')
+    const container = document.querySelector('.container')
+    container.style.backgroundColor = '#fff'
 
+    const userInfo = document.createElement('div')
+    userInfo.classList.add('userInfo')
+    
+    let username = user[0].name.split(" ").join("").toLowerCase()
+    
+    userInfo.innerHTML = `<div class="avatar">
+                                <input type=file>
+                            </div>
+                            <div class="userDetail">
+                                <p><b>${user[0].name}</b></p>
+                                <p>@${username}</p>
+                                <p>London,UK</p>
+                                <p><b>245</b> Followers</p>
+                                <p><b>132</b> Followings</p>
+                            </div>`
+
+    const tweetsData = document.createElement('div')
+    tweetsData.classList.add('tweets')
     tweets.forEach(tweet => {
-        div.style.color = 'white'
-        div.innerHTML += `<div class='tweets'>${tweet.content}</div>`
+        tweetsData.style.color = 'black'
+        tweetsData.innerHTML += `<div class='tweet'>${tweet.content}</div>`
     })
    
-    content.appendChild(div)
+    content.appendChild(userInfo)
+    content.appendChild(tweetsData)
 
 }
 
 export default {
-    renderLoginPage, renderHomepage
+    renderLoginPage, renderTweetpage
 }
