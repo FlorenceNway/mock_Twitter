@@ -26,12 +26,17 @@
     width: 25%;
     height: 95px;
     height: 100;
-    margin: 60px 10px 0 20px;
+    margin: 40px 10px 0 20px;
     border: 1px solid #f8f4f4;
     border-radius: 50%;
+    background: no-repeat center url('../images/camera.png') #faff00 ;
     input {
         width: 90%;
-        margin: 37px 0 0 5px;
+        margin: 7px 0 0 5px;
+        min-height: 90%;
+        min-width: 90%;
+        opacity: 0;
+        cursor: pointer;
     }
 }
 .userDetail {
@@ -40,7 +45,7 @@
     width: 70%;
     height: 30%;
     font-family: 'Roboto', sans-serif;
-    margin: 60px 0;
+    margin: 40px 0;
 
     p {
         padding: 6px 8px 15px;
