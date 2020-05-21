@@ -17,7 +17,7 @@ loginBtn.addEventListener('click', async (e) => {
         const allUser_Tweets = await API.getTweets()
         const user_Tweets = Tweets.tweets(allUser_Tweets,user[0].id)
 
-       Render.renderHomepage(user_Tweets)
+       Render.renderTweetpage(user,user_Tweets)
     }
     
 })
