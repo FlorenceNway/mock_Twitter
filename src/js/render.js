@@ -3,6 +3,9 @@ import polygon3 from '../images/polygon3.png'
 import polygon5 from '../images/polygon5.png'
 import polygon6 from '../images/polygon6.png'
 import sitting from '../images/sitting4.png'
+import heart from '../images/heart.svg'
+import comment from '../images/comment.svg'
+import retweet from '../images/retweet.svg'
 const content = document.querySelector('.content')
 
 const renderLoginPage = () => {
@@ -58,9 +61,9 @@ const renderTweetpage = (user,tweets) => {
                                         <p>${tweet.content}</p>
                                     </div>
                                     <div class='like_share'>
-                                        <p>likes:${tweet.likes}</p>
-                                        <p>retweets:${tweet.retweets}</p>
-                                        <p>comments: ${tweet.comments.length}</p>
+                                        <p><img src=${heart} alt='likes'>${tweet.likes}</p>
+                                        <p><img src=${retweet} alt='retweets'></i>${tweet.retweets}</p>
+                                        <p><img src=${comment} alt='comments'></i>${tweet.comments.length}</p>
                                     </div></div>` 
     })
    
