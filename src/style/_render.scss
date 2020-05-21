@@ -18,7 +18,7 @@
 .avatar {
     width: 26%;
     height: 95px;
-    margin: 40px 5px 0 10px;
+    margin: 30px 5px 0 10px;
     border-radius: 50%;
     background: no-repeat center url('../images/camera.png') $yellow;
 
@@ -37,8 +37,9 @@
     width: 72%;
     height: 30%;
     font-family: 'Roboto', sans-serif;
-    margin: 40px 5px;
+    margin: 30px 5px;
     font-weight: 100;
+    position:relative;
 
     p {
         padding: 6px 8px 15px;
@@ -54,7 +55,7 @@
         font-style: italic;
     }
     p:nth-child(4),p:nth-child(5) {
-        margin: 20px 0;
+        margin: 12px 0;
         border-bottom: 1px solid purple;
         width: 40%;
         position: relative;
@@ -62,20 +63,25 @@
     }
     &::after {
         content: '';
-        padding: 0.2px;
-        width: 46%;
-        background: $white;
+        display: block;
+        border-bottom: 1px solid #f9f5f5d9;
+        width: 60%;
         position: absolute;
-        top: 177px;
+        top: 125px;
     }
 }
 // ============= TWEETS ==============================
+.tweets {
+    position:absolute;
+    top: 175px;
+}
 .tweet {
     width: 80%;
     height: auto;
     margin: 15px auto;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     border-radius: 4px;
+    background-color: $white;
     
     .user_data {
         background-color: #FAFF00;
