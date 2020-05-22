@@ -27,9 +27,8 @@ const renderLoginPage = () => {
     content.innerHTML += loginPage;                    
 }
 
-const renderTweetpage = (user,tweets) => {
-    console.log('user',user, 'tweet',tweets)
 
+const renderTweetpage = (user,tweets) => {
     content.innerHTML = ''
     const container = document.querySelector('.container')
     container.style.backgroundColor = '#fff'
@@ -52,11 +51,6 @@ const renderTweetpage = (user,tweets) => {
     const tweetsData = document.createElement('div')
     tweetsData.classList.add('tweets')
     tweets.forEach(tweet => {
-        // const profile_img = document.createElement('img')
-        // profile_img.src = tweet.avatar_url
-        // const avatar = document.querySelector('.avatar')
-        // avatar.appendChild(profile_img)
-
         tweetsData.style.color = 'black'
         tweetsData.innerHTML += `<div class='tweet'>
                                     <div class='user_data'>
@@ -72,10 +66,8 @@ const renderTweetpage = (user,tweets) => {
                                         <p><img src=${comment} alt='comments'></i>${tweet.comments.length}</p>
                                     </div></div>` 
     })
-   
     content.appendChild(userInfo)
     content.appendChild(tweetsData)
-
 }
 
 export default {
