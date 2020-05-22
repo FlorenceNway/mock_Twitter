@@ -3,6 +3,7 @@ import Render from './js/render'
 import API from './js/API'
 import Login from './js/login'
 import Tweets from './js/tweets'
+import UploadFile from './js/uploadProfile_pic'
 
 Render.renderLoginPage()
 
@@ -18,6 +19,13 @@ loginBtn.addEventListener('click', async (e) => {
         const user_Tweets = Tweets.tweets(allUser_Tweets,user[0].id)
 
        Render.renderTweetpage(user,user_Tweets)
+
+       const file_input = document.querySelector('.choose_file')
+       UploadFile.upload_profile_pic(file_input)
     }
-    
+ 
 })
+
+
+
+
