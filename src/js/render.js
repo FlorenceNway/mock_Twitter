@@ -68,9 +68,17 @@ const renderTweetpage = (user,tweets) => {
     })
     content.appendChild(userInfo)
     content.appendChild(tweetsData)
+
+    const like_Btn = document.querySelector('.like_Btn')
+    like_click(like_Btn)
 }
 
 
+const like_click = (like_Btn) => {
+    like_Btn.addEventListener('click',() => {
+        console.log('like:')
+    })
+} 
 
 export default {
     renderLoginPage, renderTweetpage
