@@ -61,14 +61,16 @@ const renderTweetpage = (user,tweets) => {
                                         <p>${tweet.content}</p>
                                     </div>
                                     <div class='like_share'>
-                                        <p><img src=${heart} alt='likes'>${tweet.likes}</p>
-                                        <p><img src=${retweet} alt='retweets'></i>${tweet.retweets}</p>
-                                        <p><img src=${comment} alt='comments'></i>${tweet.comments.length}</p>
+                                        <p class='like_Btn'><img src=${heart} alt='likes'>${tweet.likes}</p>
+                                        <p class='retweet_Btn'><img src=${retweet} alt='retweets'></i>${tweet.retweets}</p>
+                                        <p class='comment_Btn'><img src=${comment} alt='comments'></i>${tweet.comments.length}</p>
                                     </div></div>` 
     })
     content.appendChild(userInfo)
     content.appendChild(tweetsData)
 }
+
+
 
 export default {
     renderLoginPage, renderTweetpage
