@@ -28,7 +28,7 @@ const renderLoginPage = () => {
 }
 
 const renderTweetpage = (user,tweets) => {
-    console.log(user, tweets)
+    console.log('user',user, 'tweet',tweets)
 
     content.innerHTML = ''
     const container = document.querySelector('.container')
@@ -38,7 +38,8 @@ const renderTweetpage = (user,tweets) => {
     userInfo.classList.add('userInfo')
     let username = user[0].name.split(" ").join("").toLowerCase()
     userInfo.innerHTML = `<div class="avatar">
-                                <input type=file>
+                                <input type='file' class='choose_file'>
+                                
                             </div>
                             <div class="userDetail">
                                 <p><b>${user[0].name}</b></p>
@@ -51,6 +52,11 @@ const renderTweetpage = (user,tweets) => {
     const tweetsData = document.createElement('div')
     tweetsData.classList.add('tweets')
     tweets.forEach(tweet => {
+        // const profile_img = document.createElement('img')
+        // profile_img.src = tweet.avatar_url
+        // const avatar = document.querySelector('.avatar')
+        // avatar.appendChild(profile_img)
+
         tweetsData.style.color = 'black'
         tweetsData.innerHTML += `<div class='tweet'>
                                     <div class='user_data'>
