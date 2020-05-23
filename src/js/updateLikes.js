@@ -1,8 +1,11 @@
 import API from './API.js'
 
 const like_click = (like_Btn) => {
-    like_Btn.addEventListener('click',() => {
-        API.patchLikes("***** Increase Like *****")
+    console.log(like_Btn)
+    like_Btn.addEventListener('click',(e) => {
+        const tweetid = e.target.parentNode.id
+        console.log(tweetid)
+        //API.patchLikes("***** Increase Like *****")
     })
 } 
 
