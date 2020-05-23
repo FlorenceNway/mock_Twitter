@@ -6,6 +6,7 @@ import sitting from '../images/sitting4.png'
 import heart from '../images/heart.svg'
 import comment from '../images/comment.svg'
 import retweet from '../images/retweet.svg'
+import updateLike from './updateLikes.js'
 const content = document.querySelector('.content')
 
 const renderLoginPage = () => {
@@ -70,15 +71,9 @@ const renderTweetpage = (user,tweets) => {
     content.appendChild(tweetsData)
 
     const like_Btn = document.querySelector('.like_Btn')
-    like_click(like_Btn)
+    updateLike.like_click(like_Btn)
 }
 
-
-const like_click = (like_Btn) => {
-    like_Btn.addEventListener('click',() => {
-        console.log('like:')
-    })
-} 
 
 export default {
     renderLoginPage, renderTweetpage
