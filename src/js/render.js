@@ -6,7 +6,7 @@ import sitting from '../images/sitting4.png'
 import heart from '../images/heart.svg'
 import comment from '../images/comment.svg'
 import retweet from '../images/retweet.svg'
-import updateLike from './updateLikes.js'
+
 const content = document.querySelector('.content')
 
 const renderLoginPage = () => {
@@ -30,48 +30,45 @@ const renderLoginPage = () => {
 
 
 const renderTweetpage = (user,tweets) => {
-    content.innerHTML = ''
-    const container = document.querySelector('.container')
-    container.style.backgroundColor = '#fff'
 
-    const userInfo = document.createElement('div')
-    userInfo.classList.add('userInfo')
-    let username = user[0].name.split(" ").join("").toLowerCase()
-    userInfo.innerHTML = `<div class="avatar">
-                                <input type='file' class='choose_file'>
-                                
-                            </div>
-                            <div class="userDetail">
-                                <p><b>${user[0].name}</b></p>
-                                <p>@${username}</p>
-                                <p>London,UK</p>
-                                <p><b>245</b> Followers</p>
-                                <p><b>132</b> Followings</p>
-                            </div>`
+        content.innerHTML = ''
+        const container = document.querySelector('.container')
+        container.style.backgroundColor = '#fff'
 
-    const tweetsData = document.createElement('div')
-    tweetsData.classList.add('tweets')
-    tweets.forEach(tweet => {
-        tweetsData.style.color = 'black'
-        tweetsData.innerHTML += `<div class='tweet'>
-                                    <div class='user_data'>
-                                        <p>${user[0].name}</p>
-                                        <p>${tweet.date}</p>
-                                    </div>
-                                    <div class='tweetContent'>
-                                        <p>${tweet.content}</p>
-                                    </div>
-                                    <div class='like_share'>
-                                        <p class='like_Btn'><img src=${heart} alt='likes'>${tweet.likes}</p>
-                                        <p class='retweet_Btn'><img src=${retweet} alt='retweets'></i>${tweet.retweets}</p>
-                                        <p class='comment_Btn'><img src=${comment} alt='comments'></i>${tweet.comments.length}</p>
-                                    </div></div>` 
-    })
-    content.appendChild(userInfo)
-    content.appendChild(tweetsData)
+        const userInfo = document.createElement('div')
+        userInfo.classList.add('userInfo')
+        let username = user[0].name.split(" ").join("").toLowerCase()
+        userInfo.innerHTML = `<div class="avatar">
+                                    <input type='file' class='choose_file'> 
+                                </div>
+                                <div class="userDetail">
+                                    <p><b>${user[0].name}</b></p>
+                                    <p>@${username}</p>
+                                    <p>London,UK</p>
+                                    <p><b>245</b> Followers</p>
+                                    <p><b>132</b> Followings</p>
+                                </div>`
 
-    const like_Btn = document.querySelector('.like_Btn')
-    updateLike.like_click(like_Btn)
+        const tweetsData = document.createElement('div')
+        tweetsData.classList.add('tweets')
+        tweets.forEach((tweet) => {
+            tweetsData.style.color = 'black'
+            tweetsData.innerHTML += `<div class='tweet'>
+                                        <div class='user_data'>
+                                            <p>${user[0].name}</p>
+                                            <p>${tweet.date}</p>
+                                        </div>
+                                        <div class='tweetContent'>
+                                            <p>${tweet.content}</p>
+                                        </div>
+                                        <div class='like_share'>
+                                            <p class='like_Btn' id=${tweet.id}><img src=${heart} alt='likes'>${tweet.likes}</p>
+                                            <p class='retweet_Btn'><img src=${retweet} alt='retweets'></i>${tweet.retweets}</p>
+                                            <p class='comment_Btn'><img src=${comment} alt='comments'></i>${tweet.comments.length}</p>
+                                        </div></div>` 
+        })
+        content.appendChild(userInfo)
+        content.appendChild(tweetsData);
 }
 
 
