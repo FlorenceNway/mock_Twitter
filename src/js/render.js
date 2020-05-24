@@ -62,7 +62,7 @@ const renderTweetpage = (user,tweets) => {
                                             <p>${tweet.content}</p>
                                         </div>
                                         <div class='like_share'>
-                                            <p class='like_Btn' id=${tweet.id}><img src=${heart} alt='likes'>${tweet.likes}</p>
+                                        <p id=${tweet.id}><img src=${heart} alt='likes'><span class='like_Btn'>${tweet.likes}</span></p>
                                             <p class='retweet_Btn'><img src=${retweet} alt='retweets'></i>${tweet.retweets}</p>
                                             <p class='comment_Btn'><img src=${comment} alt='comments'></i>${tweet.comments.length}</p>
                                         </div></div>` 
