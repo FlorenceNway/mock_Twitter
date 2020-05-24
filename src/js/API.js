@@ -15,7 +15,7 @@ const patchLikes = async (id,newLike) => {
         body: JSON.stringify({likes:newLike})
       };
       
-    return await fetch(`http://localhost:3000/tweets/${id}?_embed=comments`, configObject)
+    return await fetch(`${API_ENDPOINT}/tweets/${id}?_embed=comments`, configObject)
     .then((response) => {
         if(response.ok) {
             return response.json()
