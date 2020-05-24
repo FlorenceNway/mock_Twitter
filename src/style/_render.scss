@@ -107,7 +107,7 @@
         border-top: 1px solid #ccc;
     }
 
-    .like_btn:hover {
+    .like_btn:hover, like_btn:active {
         color : rgba(221, 0, 240, 0.5);
     }
 
