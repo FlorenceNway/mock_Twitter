@@ -4,7 +4,7 @@ import API from './js/API'
 import Login from './js/login'
 import Tweets from './js/tweets'
 import UploadFile from './js/uploadProfile_pic'
-import updateLike from './js/updateLikes.js'
+import updateReacts from './js/updateReacts.js'
 
 Render.renderLoginPage()
 
@@ -25,8 +25,11 @@ loginBtn.addEventListener('click', async (e) => {
        const file_input = document.querySelector('.choose_file');
        UploadFile.upload_profile_pic(file_input);
 
-       const like_Btns = document.querySelectorAll('.like_Btn');
-       [...like_Btns].forEach(updateLike.like_click)
+       const likes = document.querySelectorAll('.like_Btn');
+       [...likes].forEach(updateReacts.react_click)
+
+       const retweets = document.querySelectorAll('.retweet_Btn');
+       [...retweets].forEach(updateReacts.react_click)
     }
 })
 
