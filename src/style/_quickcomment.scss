@@ -1,0 +1,33 @@
+.commentBox {
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    .commentTextarea {
+        width: 90%;
+        min-height: 70px;
+        height: auto;
+        margin: 10px auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-indent: 10px;
+    }
+    .tweetBtnArea {
+        width: 90%;
+        height: 30px;
+        margin: 10px auto 20px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .replyBtn {
+        padding: 0 20px;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff;
+    }
+   
+}
