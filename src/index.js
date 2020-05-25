@@ -26,7 +26,6 @@ loginBtn.addEventListener('click', async (e) => {
        UploadFile.upload_profile_pic(file_input);
 
        const like_Btns = document.querySelectorAll('.like_Btn');
-       
        [...like_Btns].forEach(updateLike.like_click)
     }
 })
