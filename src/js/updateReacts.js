@@ -10,11 +10,11 @@ const react_click = (react) => {
         const action = reactImg.alt
         if(action ==='likes') {
             changeColorAfterClick(react,filledHeart)
-            API.patchLikes(e.target.id,{likes:react.textContent})
+            API.patchReacts(e.target.id,{likes:react.textContent})
             
         }else if(action === 'retweets') {
             changeColorAfterClick(react,colorRetweet)
-            API.patchLikes(e.target.id,{retweets:react.textContent})
+            API.patchReacts(e.target.id,{retweets:react.textContent})
         }
     })
 } 
