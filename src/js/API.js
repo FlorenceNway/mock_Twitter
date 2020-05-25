@@ -6,7 +6,7 @@ const TWEETS_URL = `${API_ENDPOINT}/tweets/?_embed=comments`
 const getTweets = async () => await fetch(TWEETS_URL).then(res => res.json())
 const getUsers = async () => await fetch(USERS_URL).then(res => res.json())
 
-const patchLikes = async (id,{newReacts}) => {
+const patchReact = async (id,{newReacts}) => {
     const configObject = {
         method: "PATCH",
         headers: {
@@ -29,5 +29,5 @@ const patchLikes = async (id,{newReacts}) => {
 
 
 export default {
-    getTweets,getUsers,patchLikes
+    getTweets,getUsers,patchReact
 }
