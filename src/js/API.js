@@ -6,13 +6,14 @@ const TWEETS_URL = `${API_ENDPOINT}/tweets/?_embed=comments`
 const getTweets = async () => await fetch(TWEETS_URL).then(res => res.json())
 const getUsers = async () => await fetch(USERS_URL).then(res => res.json())
 
-const patchLikes = async (id,newLike) => {
+const patchLikes = async (id,{newLikes}) => {
     const configObject = {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({likes:newLike})
+        //body: JSON.stringify({likes:newLike})
+        body: JSON.stringify(newLikes)
       };
       
     return await fetch(`${API_ENDPOINT}/tweets/${id}?_embed=comments`, configObject)
