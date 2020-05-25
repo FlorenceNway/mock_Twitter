@@ -6,7 +6,7 @@ const TWEETS_URL = `${API_ENDPOINT}/tweets/?_embed=comments`
 const getTweets = async () => await fetch(TWEETS_URL).then(res => res.json())
 const getUsers = async () => await fetch(USERS_URL).then(res => res.json())
 
-const patchReact = async (id,{newReacts}) => {
+const patchReact = async (id,newReacts) => {
     const configObject = {
         method: "PATCH",
         headers: {
