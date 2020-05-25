@@ -64,7 +64,7 @@ const renderTweetpage = (user,tweets) => {
                                         <div class='like_share'>
                                             <p><img src=${heart} alt='likes' id=${tweet.id}><span class='like_Btn'>${tweet.likes}</span></p>
                                             <p><img src=${retweet} alt='retweets' id=${tweet.id}><span class='retweet_Btn'>${tweet.retweets}</span></p>
-                                            <p class='comment_Btn'><img src=${comment} alt='comments'><span>${tweet.comments.length}</span></p>
+                                            <p><img src=${comment} alt='comments'id=${tweet.id}><span class='comment_Btn'>${tweet.comments.length}</span></p>
                                         </div></div>` 
         })
         content.appendChild(userInfo)
