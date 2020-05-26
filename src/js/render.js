@@ -30,12 +30,11 @@ const renderLoginPage = () => {
 }
 
 
-const renderTweetpage = (user,tweets) => {
-
+const renderTweetpage = (user,users,tweets) => {
         content.innerHTML = ''
         const container = document.querySelector('.container')
         container.style.backgroundColor = '#fff'
-
+        console.log(users, tweets)
         const userInfo = document.createElement('div')
         userInfo.classList.add('userInfo')
         let username = user[0].name.split(" ").join("").toLowerCase()
@@ -56,7 +55,7 @@ const renderTweetpage = (user,tweets) => {
             tweetsData.style.color = 'black'
             tweetsData.innerHTML += `<div class='tweet'>
                                         <div class='user_data'>
-                                            <p>${user[0].name}</p>
+                                            <p>${users[tweet.userId-1].name}</p>
                                             <p>${tweet.date}</p>
                                         </div>
                                         <div class='tweetContent'>
@@ -65,7 +64,7 @@ const renderTweetpage = (user,tweets) => {
                                         <div class='like_share'>
                                             <p><img src=${heart} alt='likes' id=${tweet.id}><span class='like_Btn'>${tweet.likes}</span></p>
                                             <p><img src=${retweet} alt='retweets' id=${tweet.id}><span class='retweet_Btn'>${tweet.retweets}</span></p>
-                                            <p><img src=${comment} alt='comments'id=${tweet.id}><span class='comment_Btn'>${tweet.comments.length}</span></p>
+                                            <p id=${user[0].id}><img src=${comment} alt='comments'id=${tweet.id}><span class='comment_Btn'>${tweet.comments.length}</span></p>
                                         </div>
                                         
                                     </div>` 
