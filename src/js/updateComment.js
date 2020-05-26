@@ -5,23 +5,30 @@ const comment_click = (comment) => {
     commentImg.addEventListener('click',(e) => {  
         const p = comment.parentNode
         const siblingnode = p.parentNode
-        const newnode = renderQuickComment()
+        const newnodes = renderQuickComment()
         
         const hasSibiling = siblingnode.nextElementSibling
 
        if(hasSibiling === null) {
-        insertAfter(siblingnode,newnode)
+        insertAfter(siblingnode,newnodes)
        }
+
+    submitComment(newnodes,commentImg.id)
     //comment.textContent = parseInt(comment.textContent) + 1
     // API.patchReact(e.target.id,{"likes":react.textContent})
 
     })
 } 
 
+const submitComment = (commentBox,id) => {
+    const reply = commentBox.querySelector('.replyBtn')
+    reply.addEventListener('click',() => {
+        console.log('reply click',id)
+    })  
+}
 
-
-const insertAfter = (referenceNode, newNode) => {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+const insertAfter = (referenceNode, newNodes) => {
+    referenceNode.parentNode.insertBefore(newNodes, referenceNode.nextSibling);
 }
 
 const renderQuickComment = () => {
