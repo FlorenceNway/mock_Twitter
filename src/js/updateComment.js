@@ -13,17 +13,22 @@ const comment_click = (comment) => {
         insertAfter(siblingnode,newnodes)
        }
 
-    submitComment(newnodes,commentImg.id)
+    submitComment(newnodes,commentImg.id,comment)
     //comment.textContent = parseInt(comment.textContent) + 1
     // API.patchReact(e.target.id,{"likes":react.textContent})
 
     })
 } 
 
-const submitComment = (commentBox,id) => {
+const submitComment = (commentBox,id,numOfcomments) => {
+    const inputComment = commentBox.querySelector('textarea')
     const reply = commentBox.querySelector('.replyBtn')
     reply.addEventListener('click',() => {
-        console.log('reply click',id)
+        if(inputComment.value) {
+            console.log(inputComment.value)
+            commentBox.remove()
+            numOfcomments.textContent = parseInt(numOfcomments.textContent) + 1
+        }
     })  
 }
 
