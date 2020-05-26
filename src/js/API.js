@@ -57,7 +57,7 @@ const postComment = async(userId,tweetId,newComment) => {
     .catch(error => error)
 }
 
-const getSubTweet = async() => await fetch(TWEETS_URL).then(res => res.json())
+const getSubTweet = async() => await fetch(`${API_ENDPOINT}/tweets/1?_embed=comments`).then(res => res.json())
 
 export default {
     getTweets, getUsers, patchReact, postComment
