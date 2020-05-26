@@ -4,7 +4,9 @@ import API from './js/API'
 import Login from './js/login'
 import Tweets from './js/tweets'
 import UploadFile from './js/uploadProfile_pic'
-import updateReacts from './js/updateReacts.js'
+import updateReacts from './js/updateReacts'
+import updateComment from './js/updateComment'
+
 
 Render.renderLoginPage()
 
@@ -30,6 +32,9 @@ loginBtn.addEventListener('click', async (e) => {
 
        const retweets = document.querySelectorAll('.retweet_Btn');
        [...retweets].forEach(updateReacts.react_click)
+
+       const comments = document.querySelectorAll('.comment_Btn');
+       [...comments].forEach(updateComment.comment_click)
     }
 })
 
