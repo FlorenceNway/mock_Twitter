@@ -27,7 +27,38 @@ const patchReact = async (id,newReacts) => {
 }
 
 
+const postComment = async(userId,tweetId,newComment) => {
+    const d = new Date()
+    const yy = d.getFullYear()
+    const mm = d.getMonth() + 1
+    const dd = d.getDate()
+
+    const configObject = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            userId: userId,
+            tweetId: tweetId,
+            content: newComment,
+            date:`${dd}/${mm}/${yy}`
+        })
+    }
+
+    return await fetch(`${API_ENDPOINT}/comments`, configObject)
+    .then(response => {
+        if(response.ok) {
+            return response.json()
+        }else {
+            throw "Couldn't post the comments!"
+        }
+    })
+    .catch(error => error)
+}
+
+const getSubTweet = async() => await fetch(TWEETS_URL).then(res => res.json())
 
 export default {
-    getTweets,getUsers,patchReact
+    getTweets, getUsers, patchReact, postComment
 }
