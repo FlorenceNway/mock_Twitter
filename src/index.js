@@ -22,7 +22,7 @@ loginBtn.addEventListener('click', async (e) => {
         const allUser_Tweets = await API.getTweets()
         const user_Tweets = Tweets.get_userTweets(allUser_Tweets,user[0].id)
 
-       Render.renderTweetpage(user,user_Tweets);
+       Render.renderTweetpage(user,users,allUser_Tweets);
 
        const file_input = document.querySelector('.choose_file');
        UploadFile.upload_profile_pic(file_input);
