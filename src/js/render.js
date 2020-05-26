@@ -6,7 +6,7 @@ import sitting from '../images/sitting4.png'
 import heart from '../images/heart.svg'
 import comment from '../images/comment.svg'
 import retweet from '../images/retweet.svg'
-import backArrow from '../images/backarrow.svg'
+
 
 const content = document.querySelector('.content')
 
@@ -67,18 +67,15 @@ const renderTweetpage = (user,tweets) => {
                                             <p><img src=${retweet} alt='retweets' id=${tweet.id}><span class='retweet_Btn'>${tweet.retweets}</span></p>
                                             <p><img src=${comment} alt='comments'id=${tweet.id}><span class='comment_Btn'>${tweet.comments.length}</span></p>
                                         </div>
-                                        <div class='commentBox'>
-                                                <textarea class='commentTextarea' placeholder='Your Comment'></textarea>
-                                                <div class='tweetBtnArea'>
-                                                    <img src=${backArrow} alt="backArrow">
-                                                    <button class='replyBtn'>Reply</button>
-                                                </div>
-                                        </div>
+                                        
                                     </div>` 
+                                
         })
         content.appendChild(userInfo)
         content.appendChild(tweetsData);
 }
+
+// 
 
 export default {
     renderLoginPage, renderTweetpage
