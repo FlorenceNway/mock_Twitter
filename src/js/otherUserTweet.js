@@ -7,13 +7,15 @@ import updateReacts from './updateReacts'
 import Render from './render'
 
 const content = document.querySelector('.content')
+const user = JSON.parse(localStorage.getItem('user'))
+
 
 const clickTweet = tweet => {
 
     tweet.addEventListener('click',async () => {
        const oneTweet = await API.getSubTweet(tweet.id)
        renderEachTweet(oneTweet)
-//****** Repeatttttttt *****/
+
        const likes = document.querySelectorAll('.like_Btn');
        [...likes].forEach(updateReacts.react_click)
 
@@ -24,15 +26,19 @@ const clickTweet = tweet => {
     })
 }
 
-const renderEachTweet = tweet => {
+const renderEachTweet = async tweet => {
     content.innerHTML=''
     const container = document.querySelector('.container')
     container.style.backgroundColor = '#000'
+
     const div = document.createElement('div')
     div.className = 'subTweet'
     const subdiv = renderDOM(tweet)
     div.innerHTML += subdiv            
     content.appendChild(div)
+
+    const comments = await renderComment(tweet.comments)
+    content.appendChild(comments)
 }
 
 
@@ -41,11 +47,10 @@ const clickBackArrow = () => {
 
     backArrow.addEventListener('click', async () =>{
         const users = await API.getUsers()
-        const user = JSON.parse(localStorage.getItem('user'))
         const allTweets = await API.getTweets()
     
         Render.renderTweetpage(user,users,allTweets)
-    //****** Repeatttttttt *****/    
+//****** Repeatttttttt *****/    
        const likes = document.querySelectorAll('.like_Btn');
        [...likes].forEach(updateReacts.react_click)
 
@@ -55,8 +60,30 @@ const clickBackArrow = () => {
     })
 }
 
-const renderComment = () => {
-
+const renderComment = async (comments) => {
+    const users = await API.getUsers()
+    const commentDiv = document.createElement('div')
+    commentDiv.className = 'comments'    
+   
+    comments.forEach((comment) => {
+        const commentUser = users.filter(user => user.id === comment.userId)
+        console.log(commentUser)
+        const comment_div = `<div class='comment'>
+                                <div class='profile'>
+                                    <div class="avatar">
+                                        <img src=${commentUser[0].avatar_url} alt="">
+                                    </div>
+                                    <div class="userDetail">
+                                        <p><b>${commentUser[0].name}</b></p>
+                                        <p>@${commentUser[0].name}</p>
+                                    </div>
+                                </div>
+                                <div class="commentText">${comment.content}</div>
+                            </div>`
+        commentDiv.innerHTML += comment_div                    
+    })   
+   
+    return commentDiv        
 }
 
 const renderDOM = (tweet) => {
@@ -87,6 +114,7 @@ const renderDOM = (tweet) => {
                             <p><img src=${retweet} alt='retweets' id=${tweet.id}><span class='retweet_Btn'>${tweet.retweets}</span></p>
                             <p id=${tweet.user.id}><img src=${comment} alt='comments'id=${tweet.id}><span class='comment_Btn'>${tweet.comments.length}</span></p>
                         </div>
+                        <h4 class="commentTitle">COMMENTS</h4>
                     </div>`
     return subdiv
 }
