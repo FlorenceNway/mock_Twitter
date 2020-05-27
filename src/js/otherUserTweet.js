@@ -4,23 +4,27 @@ import comment from '../images/comment.svg'
 import retweet from '../images/retweet.svg'
 import backArrow from '../images/backarrow.svg'
 import updateReacts from './updateReacts'
+import Render from './render'
 
 const content = document.querySelector('.content')
 
-const clickOtherUserTweet = (tweet) => {
+const clickOtherUserTweet = tweet => {
+
     tweet.addEventListener('click',async () => {
        const oneTweet = await API.getSubTweet(tweet.id)
        renderEachTweet(oneTweet)
-
+//****** Repeatttttttt *****/
        const likes = document.querySelectorAll('.like_Btn');
        [...likes].forEach(updateReacts.react_click)
 
        const retweets = document.querySelectorAll('.retweet_Btn');
        [...retweets].forEach(updateReacts.react_click)
+
+       clickBackArrow()
     })
 }
 
-const renderEachTweet = (tweet) => {
+const renderEachTweet = tweet => {
     content.innerHTML=''
     const container = document.querySelector('.container')
     container.style.backgroundColor = '#000'
@@ -28,9 +32,9 @@ const renderEachTweet = (tweet) => {
     div.className = 'subTweet'
     let username = tweet.user.name.split(" ").join("").toLowerCase()
     const subdiv = `
-                    <div class="backToTweets">
+                    <div class="backword">
                         <div class='arrowText'>
-                            <img src=${backArrow} alt="backArrow">
+                            <img src=${backArrow} alt="backArrow" class='backToTweets'>
                             <span>Tweet</span>
                         </div>
                     </div>
@@ -57,6 +61,31 @@ const renderEachTweet = (tweet) => {
                 `
     div.innerHTML += subdiv            
     content.appendChild(div)
+}
+
+
+const clickBackArrow = () => {
+    const backArrow = document.querySelector('.backToTweets')
+
+    backArrow.addEventListener('click', async () =>{
+
+        const users = await API.getUsers()
+        const user = JSON.parse(localStorage.getItem('user'))
+        const allTweets = await API.getTweets()
+    
+        Render.renderTweetpage(user,users,allTweets)
+    //****** Repeatttttttt *****/    
+        const likes = document.querySelectorAll('.like_Btn');
+       [...likes].forEach(updateReacts.react_click)
+
+       const retweets = document.querySelectorAll('.retweet_Btn');
+       [...retweets].forEach(updateReacts.react_click)
+
+    })
+}
+
+const renderComment = () => {
+
 }
 
 export default {
