@@ -2,7 +2,7 @@ import './style/style.scss'
 import Render from './js/render'
 import API from './js/API'
 import Login from './js/login'
-import Tweets from './js/tweets'
+//import Tweets from './js/tweets'
 import UploadFile from './js/uploadProfile_pic'
 import updateReacts from './js/updateReacts'
 import updateComment from './js/updateComment'
@@ -21,8 +21,8 @@ loginBtn.addEventListener('click', async (e) => {
     
     if(user) {
         const allUser_Tweets = await API.getTweets()
-        const user_Tweets = Tweets.get_userTweets(allUser_Tweets,user[0].id)
-
+        //const user_Tweets = Tweets.get_userTweets(allUser_Tweets,user[0].id)
+       
         Render.renderTweetpage(user,users,allUser_Tweets);
        
        const file_input = document.querySelector('.choose_file');
