@@ -58,7 +58,7 @@ const renderTweetpage = (user,users,tweets) => {
                                             <p>${users[tweet.userId-1].name}</p>
                                             <p>${tweet.date}</p>
                                         </div>
-                                        <div class='tweetContent'>
+                                        <div class='tweetContent' id=${tweet.id}>
                                             <p>${tweet.content}</p>
                                         </div>
                                         <div class='like_share'>
