@@ -1,6 +1,7 @@
 import backArrow from '../images/backarrow.svg'
 import API from './API'
 
+//When hit the comment button
 const comment_click = (comment) => {
     const commentImg = comment.previousSibling
         commentImg.addEventListener('click',(e) => {  
@@ -13,8 +14,8 @@ const comment_click = (comment) => {
             insertAfter(siblingnode,newnodes) //insert new node after like_share div (condition control for keep adding reply box)
         }
 
-        submitComment(newnodes,commentImg.id,p.id,comment)
-        backward()
+        submitComment(newnodes,commentImg.id,p.id,comment) //submit comment when user hit the reply button
+        backward() // remove comment reply box when user hit the back arrow
     })
 } 
 
