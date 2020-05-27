@@ -76,7 +76,7 @@ const renderTweetpage = (user,users,tweets) => {
 
         //****** Repeatttttttt *****/
         const tweetContents = document.querySelectorAll('.tweetContent');
-       [...tweetContents].forEach(otherUserTweet.clickOtherUserTweet)
+       [...tweetContents].forEach(otherUserTweet.clickTweet)
 }
 
 
