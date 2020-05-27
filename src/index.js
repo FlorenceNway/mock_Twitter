@@ -6,6 +6,7 @@ import Tweets from './js/tweets'
 import UploadFile from './js/uploadProfile_pic'
 import updateReacts from './js/updateReacts'
 import updateComment from './js/updateComment'
+import otherUserTweet from './js/otherUserTweet'
 
 
 Render.renderLoginPage()
@@ -22,9 +23,7 @@ loginBtn.addEventListener('click', async (e) => {
         const allUser_Tweets = await API.getTweets()
         const user_Tweets = Tweets.get_userTweets(allUser_Tweets,user[0].id)
 
-       setTimeout(()=> {
-            Render.renderTweetpage(user,users,allUser_Tweets);
-       },1000)
+        Render.renderTweetpage(user,users,allUser_Tweets);
        
        const file_input = document.querySelector('.choose_file');
        UploadFile.upload_profile_pic(file_input);
@@ -37,6 +36,9 @@ loginBtn.addEventListener('click', async (e) => {
 
        const comments = document.querySelectorAll('.comment_Btn');
        [...comments].forEach(updateComment.comment_click)
+
+       const otherTweets = document.querySelectorAll('.tweetContent');
+       [...otherTweets].forEach(otherUserTweet.clickOtherUserTweet)
     }
 })
 
