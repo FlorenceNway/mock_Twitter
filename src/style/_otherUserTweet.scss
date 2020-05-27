@@ -21,7 +21,13 @@
         }
         .userDetail::after {
             top: 85px;
-        }    
+        } 
+        p:last-child {
+            border-bottom: 1px solid purple;
+            width: 80%;
+            margin-bottom: 2px;
+            padding-bottom: 12px;
+        }   
     }
     
     .tweetContent {
@@ -55,5 +61,53 @@
         border-bottom: 1px solid #ccc;
         cursor: pointer;
     }
+    .commentTitle {
+        padding: 20px;
+    }
 }
 
+.comments {
+    .comment {
+            color: white;
+            border-bottom: 1px solid #ccc;
+            width: 90%;
+            margin: auto;
+
+        .profile {
+                display: flex;
+                min-height: 80px;
+                height: auto;
+                .avatar {
+                    width: 20%;
+                    height: 70px;
+                    margin: 25px 0 10px;
+                    background: no-repeat center #FAFF00;
+
+                    img {
+                        width: 86%;
+                        margin-left: 3px;
+                    }
+                }
+                p {
+                    display: inline;
+                    margin: 0;
+                    font-size: $m-size;
+                    &:first-child{ 
+                        width: auto;
+                        font-size: $s-size;
+                    }    
+                   &:last-child{
+                       width: auto;
+                       font-size: $xs-size;
+                   }
+                }
+                .userDetail::after {
+                    top: 40px;
+                }
+        }
+        .commentText {
+            height: auto;
+            min-height: 70px;
+        }
+    }
+}
