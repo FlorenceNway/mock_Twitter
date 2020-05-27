@@ -3,22 +3,22 @@ import API from './API'
 
 const comment_click = (comment) => {
     const commentImg = comment.previousSibling
-    commentImg.addEventListener('click',(e) => {  
-        const p = comment.parentNode
-        const siblingnode = p.parentNode
-        const newnodes = renderQuickComment()
-        const hasSibiling = siblingnode.nextElementSibling
+        commentImg.addEventListener('click',(e) => {  
+            const p = comment.parentNode
+            const siblingnode = p.parentNode
+            const newnodes = renderQuickComment()
+            const hasSibiling = siblingnode.nextElementSibling
 
-       if(hasSibiling === null) {
-        insertAfter(siblingnode,newnodes)
-       }
+        if(hasSibiling === null) {
+            insertAfter(siblingnode,newnodes) //insert new node after like_share div (condition control for keep adding reply box)
+        }
 
-    submitComment(newnodes,commentImg.id,p.id,comment)
-    
-
+        submitComment(newnodes,commentImg.id,p.id,comment)
+        backward()
     })
 } 
 
+//When hit the reply button
 const submitComment = (commentBox,TweetId,UserId,numOfcomments) => {
     const inputComment = commentBox.querySelector('textarea')
     const reply = commentBox.querySelector('.replyBtn')
@@ -31,13 +31,22 @@ const submitComment = (commentBox,TweetId,UserId,numOfcomments) => {
     })  
 }
 
+//When hit the backward button
+const backward = () => {
+    const backArrow = document.querySelector('.bakArow')
+    const commentBox = document.querySelector('.commentBox')
+
+    backArrow.addEventListener('click', () => {
+        commentBox.remove()
+    })
+}
 
 const renderQuickComment = () => {
     const div = document.createElement('div')
     div.className = 'commentBox'
     div.innerHTML = ` <textarea class='commentTextarea' placeholder='Your Comment'></textarea>
                       <div class='tweetBtnArea'>
-                            <img src=${backArrow} alt="backArrow">
+                            <img class='bakArow' src=${backArrow} alt="backArrow">
                             <button class='replyBtn'>Reply</button>
                     </div>`
     return div
