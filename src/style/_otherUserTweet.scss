@@ -78,9 +78,9 @@
                 min-height: 80px;
                 height: auto;
                 .avatar {
-                    width: 20%;
-                    height: 70px;
-                    margin: 25px 0 10px;
+                    width: 16%;
+                    height: 55px;
+                    margin: 22px 0 10px;
                     background: no-repeat center #FAFF00;
 
                     img {
@@ -95,14 +95,25 @@
                     &:first-child{ 
                         width: auto;
                         font-size: $s-size;
+                        border-bottom: 1px solid purple;
+                        margin-left: 10px;
                     }    
                    &:last-child{
                        width: auto;
                        font-size: $xs-size;
-                   }
+                       border-bottom: 1px solid purple;
+                       margin-top: 3px;
+                    }
                 }
-                .userDetail::after {
-                    top: 40px;
+        
+                .userDetail {
+                    margin: 20px 0;
+                    width: unset;
+                    
+                    &::after {
+                        top: 47px;
+                        left: 10px;
+                    }
                 }
         }
         .commentText {
