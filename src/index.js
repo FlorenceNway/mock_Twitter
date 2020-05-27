@@ -38,7 +38,7 @@ loginBtn.addEventListener('click', async (e) => {
        [...comments].forEach(updateComment.comment_click)
 
        const tweets = document.querySelectorAll('.tweetContent');
-       [...tweets].forEach(otherUserTweet.clickOtherUserTweet)
+       [...tweets].forEach(otherUserTweet.clickTweet)
     }
 })
 
