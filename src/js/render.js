@@ -6,6 +6,7 @@ import sitting from '../images/sitting4.png'
 import heart from '../images/heart.svg'
 import comment from '../images/comment.svg'
 import retweet from '../images/retweet.svg'
+import otherUserTweet from './otherUserTweet'
 
 
 const content = document.querySelector('.content')
@@ -34,7 +35,7 @@ const renderTweetpage = (user,users,tweets) => {
         content.innerHTML = ''
         const container = document.querySelector('.container')
         container.style.backgroundColor = '#fff'
-        console.log(users, tweets)
+
         const userInfo = document.createElement('div')
         userInfo.classList.add('userInfo')
         let username = user[0].name.split(" ").join("").toLowerCase()
@@ -72,9 +73,12 @@ const renderTweetpage = (user,users,tweets) => {
         })
         content.appendChild(userInfo)
         content.appendChild(tweetsData);
+
+        //****** Repeatttttttt *****/
+        const tweetContents = document.querySelectorAll('.tweetContent');
+       [...tweetContents].forEach(otherUserTweet.clickOtherUserTweet)
 }
 
-// 
 
 export default {
     renderLoginPage, renderTweetpage
