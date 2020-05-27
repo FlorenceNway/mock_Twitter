@@ -1,25 +1,29 @@
 const userLogin = (users) => {
     const form = document.querySelector('form')
     const errorNode = document.createElement('p')
+    errorNode.className = 'errorUsername'
+    form.appendChild(errorNode)
 
-    const input = document.querySelector('input')
+    const hasError = form.querySelector('.errorUsername')
+    const input = document.querySelector('#user')
+    const password = document.querySelector('#pw')
+
     if(input.value) {
         const user = users.filter(user => user.name === input.value)
 
         if(user.length) {
-            const errNode = form.querySelector('.wrongUsername')
-            if(errNode) { errNode.remove() }
-            
-            return user   
+            password.value ='password'
+            if(hasError) errorNode.remove();
+            return user  
+
         }else {
-            errorNode.innerText = 'Incorrect Username'
-            errorNode.className = 'wrongUsername'
-            form.appendChild(errorNode)
+            hasError.innerText = ""
+            hasError.innerText = 'Incorrect Username'
         } 
-        return user
 
     } else {
-        alert('Plese enter Username and Password')
+            hasError.innerText = ""
+            hasError.innerText = 'Plese enter Username'
     }
 }
 
