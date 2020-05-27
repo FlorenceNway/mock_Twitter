@@ -8,7 +8,7 @@ import Render from './render'
 
 const content = document.querySelector('.content')
 
-const clickOtherUserTweet = tweet => {
+const clickTweet = tweet => {
 
     tweet.addEventListener('click',async () => {
        const oneTweet = await API.getSubTweet(tweet.id)
@@ -30,6 +30,36 @@ const renderEachTweet = tweet => {
     container.style.backgroundColor = '#000'
     const div = document.createElement('div')
     div.className = 'subTweet'
+    const subdiv = renderDOM(tweet)
+    div.innerHTML += subdiv            
+    content.appendChild(div)
+}
+
+
+const clickBackArrow = () => {
+    const backArrow = document.querySelector('.backToTweets')
+
+    backArrow.addEventListener('click', async () =>{
+        const users = await API.getUsers()
+        const user = JSON.parse(localStorage.getItem('user'))
+        const allTweets = await API.getTweets()
+    
+        Render.renderTweetpage(user,users,allTweets)
+    //****** Repeatttttttt *****/    
+       const likes = document.querySelectorAll('.like_Btn');
+       [...likes].forEach(updateReacts.react_click)
+
+       const retweets = document.querySelectorAll('.retweet_Btn');
+       [...retweets].forEach(updateReacts.react_click)
+
+    })
+}
+
+const renderComment = () => {
+
+}
+
+const renderDOM = (tweet) => {
     let username = tweet.user.name.split(" ").join("").toLowerCase()
     const subdiv = `
                     <div class="backword">
@@ -57,37 +87,10 @@ const renderEachTweet = tweet => {
                             <p><img src=${retweet} alt='retweets' id=${tweet.id}><span class='retweet_Btn'>${tweet.retweets}</span></p>
                             <p id=${tweet.user.id}><img src=${comment} alt='comments'id=${tweet.id}><span class='comment_Btn'>${tweet.comments.length}</span></p>
                         </div>
-                    </div>
-                `
-    div.innerHTML += subdiv            
-    content.appendChild(div)
-}
-
-
-const clickBackArrow = () => {
-    const backArrow = document.querySelector('.backToTweets')
-
-    backArrow.addEventListener('click', async () =>{
-
-        const users = await API.getUsers()
-        const user = JSON.parse(localStorage.getItem('user'))
-        const allTweets = await API.getTweets()
-    
-        Render.renderTweetpage(user,users,allTweets)
-    //****** Repeatttttttt *****/    
-        const likes = document.querySelectorAll('.like_Btn');
-       [...likes].forEach(updateReacts.react_click)
-
-       const retweets = document.querySelectorAll('.retweet_Btn');
-       [...retweets].forEach(updateReacts.react_click)
-
-    })
-}
-
-const renderComment = () => {
-
+                    </div>`
+    return subdiv
 }
 
 export default {
-    clickOtherUserTweet
+    clickTweet
 }
