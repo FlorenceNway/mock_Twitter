@@ -4,11 +4,9 @@ import comment from '../images/comment.svg'
 import retweet from '../images/retweet.svg'
 import backArrow from '../images/backarrow.svg'
 import updateReacts from './updateReacts'
-import Render from './render'
+import BackArrow from './clickBackArrow'
 
 const content = document.querySelector('.content')
-const user = JSON.parse(localStorage.getItem('user'))
-
 
 const clickTweet = tweet => {
 
@@ -22,7 +20,7 @@ const clickTweet = tweet => {
        const retweets = document.querySelectorAll('.retweet_Btn');
        [...retweets].forEach(updateReacts.react_click)
 
-       clickBackArrow()
+       BackArrow.clickBackArrow()
     })
 }
 
@@ -41,24 +39,6 @@ const renderEachTweet = async tweet => {
     content.appendChild(comments)
 }
 
-
-const clickBackArrow = () => {
-    const backArrow = document.querySelector('.backToTweets')
-
-    backArrow.addEventListener('click', async () =>{
-        const users = await API.getUsers()
-        const allTweets = await API.getTweets()
-    
-        Render.renderTweetpage(user,users,allTweets)
-//****** Repeatttttttt *****/    
-       const likes = document.querySelectorAll('.like_Btn');
-       [...likes].forEach(updateReacts.react_click)
-
-       const retweets = document.querySelectorAll('.retweet_Btn');
-       [...retweets].forEach(updateReacts.react_click)
-
-    })
-}
 
 const renderComment = async (comments) => {
     const users = await API.getUsers()
