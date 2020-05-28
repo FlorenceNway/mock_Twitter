@@ -5,8 +5,6 @@ import Login from './js/login'
 import UploadFile from './js/uploadProfile_pic'
 import updateReacts from './js/updateReacts'
 import updateComment from './js/updateComment'
-import otherUserTweet from './js/otherUserTweet'
-
 
 Render.renderLoginPage()
 
