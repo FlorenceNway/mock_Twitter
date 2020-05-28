@@ -6,7 +6,7 @@ import sitting from '../images/sitting4.png'
 import heart from '../images/heart.svg'
 import comment from '../images/comment.svg'
 import retweet from '../images/retweet.svg'
-import otherUserTweet from './otherUserTweet'
+import EachTweetDetails from './eachTweetDetails'
 import NewTweet from './createNewTweet'
 
 
@@ -75,9 +75,8 @@ const renderTweetpage = (user,users,tweets) => {
         content.appendChild(userInfo)
         content.appendChild(tweetsData);
 
-        //****** Repeatttttttt *****/
-        const tweetContents = document.querySelectorAll('.tweetContent');
-       [...tweetContents].forEach(otherUserTweet.clickTweet)
+       const tweetContents = document.querySelectorAll('.tweetContent');
+       [...tweetContents].forEach(EachTweetDetails.clickTweet)
 
        NewTweet.clickNavigate_tweetBtn()
 }
