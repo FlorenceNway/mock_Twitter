@@ -7,6 +7,7 @@ import heart from '../images/heart.svg'
 import comment from '../images/comment.svg'
 import retweet from '../images/retweet.svg'
 import otherUserTweet from './otherUserTweet'
+import NewTweet from './createNewTweet'
 
 
 const content = document.querySelector('.content')
@@ -77,6 +78,8 @@ const renderTweetpage = (user,users,tweets) => {
         //****** Repeatttttttt *****/
         const tweetContents = document.querySelectorAll('.tweetContent');
        [...tweetContents].forEach(otherUserTweet.clickTweet)
+
+       NewTweet.clickCreateTweet()
 }
 
 
