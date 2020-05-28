@@ -12,25 +12,44 @@ const clickNavigate_tweetBtn = () => {
 
     navigate_tweetBtn.addEventListener('click',() => {
         content.innerHTML = ''
-        const div = renderCreateNewTweet()
+        const div = renderCreateNewTweetBox()
         content.innerHTML += div
+
+        const createNewTweetBtn = document.querySelector('.createNewTweetBtn')
+        const backtotweets = document.querySelector('.backtotweets')
+        clickCreatNewTweetBtn(createNewTweetBtn)  
+        clickBackToTweetsArrow(backtotweets)
     })
+     
 }
 
-const renderCreateNewTweet = () => {
-    const container = document.querySelector('.container')
+const renderCreateNewTweetBox = () => {
     const div = `<div class="tweetAsUwish">
                     <div class='navigateArea'>
-                        <img src=${backArrow} alt="backArrow">
+                        <img src=${backArrow} alt="backArrow" class='backtotweets'>
                         <button class='createNewTweetBtn'>Tweet</button>
                     </div>
                     <div class='tweetText'>
                         <textarea name="tweet" cols="30" rows="9" placeholder="What's on your mind"></textarea>
                     </div>
                 </div>`
+                 
      return div           
 }
 
+const clickCreatNewTweetBtn = (createNewTweetBtn) => {
+    createNewTweetBtn.addEventListener('click',()=> {
+        console.log('click tweet')
+    })
+
+}
+
+const clickBackToTweetsArrow = (backtoTweetsArrow) => {
+    backtoTweetsArrow.addEventListener('click',()=> {
+        console.log('click backarrow')
+    })
+}
+
 export default {
-    clickNavigate_tweetBtn, renderCreateNewTweet
+    clickNavigate_tweetBtn, renderCreateNewTweetBox
 }
