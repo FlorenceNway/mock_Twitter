@@ -3,13 +3,17 @@ import Render from './render'
 import updateReacts from './updateReacts'
 import updateComment from './updateComment'
 
-
 const goToTweets = (button) => {
     const user = JSON.parse(localStorage.getItem('user'))
 
-    button.addEventListener('click', async () =>{
-        const users = await API.getUsers()
-        const allTweets = await API.getTweets()
+    button.addEventListener('click', () =>{
+        backToTweet(user)
+    })
+}
+
+const backToTweet = async (user) => {
+    const users = await API.getUsers()
+    const allTweets = await API.getTweets()
     
         Render.renderTweetpage(user,users,allTweets)
         
@@ -21,10 +25,8 @@ const goToTweets = (button) => {
 
        const comments = document.querySelectorAll('.comment_Btn');
        [...comments].forEach(updateComment.comment_click)
-
-    })
 }
 
 export default {
-    goToTweets
+    goToTweets,backToTweet
 }
