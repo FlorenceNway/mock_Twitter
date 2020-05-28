@@ -1,18 +1,18 @@
 .navigateTweetBtn {
     position: fixed;
-    right: 0;
+    right: 10px;
     bottom: 10px;
 }
 
 .tweetAsUwish {
     height: 380px;
     background: url('../images/path.svg') no-repeat;
-    
+
     .navigateArea {
         display: flex;
         justify-content: space-between;
         padding: 20px;
-        border: 1px solid $yellow;
+        border-bottom: 1.2px solid $yellow;
     
         .createNewTweetBtn {
             padding: 8px 17px;
