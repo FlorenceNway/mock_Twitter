@@ -1,30 +1,35 @@
 import TweetBtn from '../images/newtweet.png'
+import backArrow from '../images/tweetBackArrow.svg'
 
 const content = document.querySelector('.content')
  
-const clickCreateTweet = () => {
-    const tweetBtn = document.createElement('img')
-    tweetBtn.src = TweetBtn
-    tweetBtn.className = 'tweetBtn'
-    content.appendChild(tweetBtn)
+const clickNavigate_tweetBtn = () => {
+    const navigate_tweetBtn = document.createElement('img')
+    navigate_tweetBtn.src = TweetBtn
+    navigate_tweetBtn.className = 'navigateTweetBtn'
+    content.appendChild(navigate_tweetBtn)
 
-    tweetBtn.addEventListener('click',() => {
-        console.log('click')
+    navigate_tweetBtn.addEventListener('click',() => {
+        content.innerHTML = ''
+        const div = renderCreateNewTweet()
+        content.innerHTML += div
     })
 }
 
 const renderCreateNewTweet = () => {
+    const container = document.querySelector('.container')
     const div = `<div class="tweetAsUwish">
-                    <div>
-                        <img src='' alt="backArrow">
-                        <button>Tweet</button>
+                    <div class='navigateArea'>
+                        <img src=${backArrow} alt="backArrow">
+                        <button class='createNewTweetBtn'>Tweet</button>
                     </div>
-                    <div>
-                        <textarea name="tweet" id="" cols="30" rows="10"></textarea>
+                    <div class='tweetText'>
+                        <textarea name="tweet" id="" cols="30" rows="9" placeholder="What's on your mind"></textarea>
                     </div>
                 </div>`
+     return div           
 }
 
 export default {
-    clickCreateTweet, renderCreateNewTweet
+    clickNavigate_tweetBtn, renderCreateNewTweet
 }
