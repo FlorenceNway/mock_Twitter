@@ -1,0 +1,17 @@
+.subTweet {
+    .commentBox {
+            margin-top: 10px;
+        textarea {
+            border: 1px solid $yellow;
+            background-color: transparent;
+            padding: 10px;
+            box-sizing: border-box;
+            color: $yellow;
+            font-size: $s-size;
+
+            &::placeholder {
+                font-size: $s-size;
+            }
+        }
+    }
+}
