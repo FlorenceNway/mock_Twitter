@@ -3,6 +3,7 @@ import backArrow from '../images/tweetBackArrow.svg'
 
 const content = document.querySelector('.content')
  
+//When hit the leaf/quill icon 
 const clickNavigate_tweetBtn = () => {
     const navigate_tweetBtn = document.createElement('img')
     navigate_tweetBtn.src = TweetBtn
@@ -24,7 +25,7 @@ const renderCreateNewTweet = () => {
                         <button class='createNewTweetBtn'>Tweet</button>
                     </div>
                     <div class='tweetText'>
-                        <textarea name="tweet" id="" cols="30" rows="9" placeholder="What's on your mind"></textarea>
+                        <textarea name="tweet" cols="30" rows="9" placeholder="What's on your mind"></textarea>
                     </div>
                 </div>`
      return div           
