@@ -79,7 +79,7 @@ const renderTweetpage = (user,users,tweets) => {
         const tweetContents = document.querySelectorAll('.tweetContent');
        [...tweetContents].forEach(otherUserTweet.clickTweet)
 
-       NewTweet.clickCreateTweet()
+       NewTweet.clickNavigate_tweetBtn()
 }
 
 
