@@ -1,6 +1,7 @@
 import TweetBtn from '../images/newtweet.png'
 import backArrow from '../images/tweetBackArrow.svg'
 import GoToTweets from './goBackToTweets'
+import API from './API'
 
 const content = document.querySelector('.content')
  
@@ -40,10 +41,15 @@ const renderCreateNewTweetBox = () => {
 
 const clickCreatNewTweetBtn = (createNewTweetBtn) => {
     createNewTweetBtn.addEventListener('click',()=> {
-
-        console.log('click tweet')
+        const user = JSON.parse(localStorage.getItem('user'))
+        const tweet = document.querySelector('.tweetText textarea')
+    
+        if(tweet.value) {
+            API.postTweet(user[0].id,tweet.value)
+            GoToTweets.backToTweet(user)
+        }
+        
     })
-
 }
 
 
