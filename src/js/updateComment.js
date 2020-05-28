@@ -4,33 +4,37 @@ import API from './API'
 //When hit the comment button
 const comment_click = (comment) => {
     const commentImg = comment.previousSibling
-        commentImg.addEventListener('click',(e) => {  
-            const p = comment.parentNode
-            const siblingnode = p.parentNode
+    const p = comment.parentNode
+    const siblingnode = p.parentNode
+        commentImg.addEventListener('click',(e) => {     
             const newnodes = renderQuickComment()
             const hasSibiling = siblingnode.nextElementSibling
 
         if(hasSibiling === null) {
             insertAfter(siblingnode,newnodes) //insert new node after like_share div (condition control for keep adding reply box)
         }
-
-        submitComment(newnodes,commentImg.id,p.id,comment) //submit comment when user hit the reply button
+        
+        const replyBtn = newnodes.querySelector('.replyBtn')
+        submitComment(newnodes,commentImg.id,p.id,comment,replyBtn) //submit comment when user hit the reply button
         backward() // remove comment reply box when user hit the back arrow
     })
 } 
 
+
 //When hit the reply button
-const submitComment = (commentBox,TweetId,UserId,numOfcomments) => {
+const submitComment = (commentBox,TweetId,UserId,numOfcomments,Btn) => {
     const inputComment = commentBox.querySelector('textarea')
-    const reply = commentBox.querySelector('.replyBtn')
-    reply.addEventListener('click',() => {
+    
+    Btn.addEventListener('click',() => {
         if(inputComment.value) {
             API.postComment(parseInt(UserId),parseInt(TweetId),inputComment.value)
             commentBox.remove()
-            numOfcomments.textContent = parseInt(numOfcomments.textContent) + 1
+            numOfcomments.innerHTML = parseInt(numOfcomments.innerHTML) + 1
+            
         }
     })  
 }
+
 
 //When hit the backward button
 const backward = () => {
@@ -59,5 +63,5 @@ const insertAfter = (referenceNode, newNodes) => {
 
 
 export default {
-    comment_click
+    comment_click, renderQuickComment, submitComment, insertAfter, backward
 }
