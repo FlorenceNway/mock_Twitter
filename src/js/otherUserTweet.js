@@ -4,7 +4,7 @@ import comment from '../images/comment.svg'
 import retweet from '../images/retweet.svg'
 import backArrow from '../images/backarrow.svg'
 import updateReacts from './updateReacts'
-import BackArrow from './clickBackArrow'
+import GoToTweets from './goBackToTweets'
 
 const content = document.querySelector('.content')
 
@@ -20,7 +20,8 @@ const clickTweet = tweet => {
        const retweets = document.querySelectorAll('.retweet_Btn');
        [...retweets].forEach(updateReacts.react_click)
 
-       BackArrow.clickBackArrow()
+       const back_arrow = document.querySelector('.backToTweets')
+       GoToTweets.goToTweets(back_arrow)
     })
 }
 
