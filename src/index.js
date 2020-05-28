@@ -2,7 +2,6 @@ import './style/style.scss'
 import Render from './js/render'
 import API from './js/API'
 import Login from './js/login'
-//import Tweets from './js/tweets'
 import UploadFile from './js/uploadProfile_pic'
 import updateReacts from './js/updateReacts'
 import updateComment from './js/updateComment'
@@ -37,8 +36,8 @@ loginBtn.addEventListener('click', async (e) => {
        const comments = document.querySelectorAll('.comment_Btn');
        [...comments].forEach(updateComment.comment_click)
 
-       const tweets = document.querySelectorAll('.tweetContent');
-       [...tweets].forEach(otherUserTweet.clickTweet)
+    //    const tweets = document.querySelectorAll('.tweetContent');
+    //    [...tweets].forEach(otherUserTweet.clickTweet)
     }
 })
 
