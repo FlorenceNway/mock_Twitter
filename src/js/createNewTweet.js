@@ -1,5 +1,6 @@
 import TweetBtn from '../images/newtweet.png'
 import backArrow from '../images/tweetBackArrow.svg'
+import GoToTweets from './goBackToTweets'
 
 const content = document.querySelector('.content')
  
@@ -16,9 +17,9 @@ const clickNavigate_tweetBtn = () => {
         content.innerHTML += div
 
         const createNewTweetBtn = document.querySelector('.createNewTweetBtn')
-        const backtotweets = document.querySelector('.backtotweets')
+        const backtoTweetsBtn = document.querySelector('.backtotweets')
         clickCreatNewTweetBtn(createNewTweetBtn)  
-        clickBackToTweetsArrow(backtotweets)
+        GoToTweets.goToTweets(backtoTweetsBtn)
     })
      
 }
@@ -39,16 +40,12 @@ const renderCreateNewTweetBox = () => {
 
 const clickCreatNewTweetBtn = (createNewTweetBtn) => {
     createNewTweetBtn.addEventListener('click',()=> {
+
         console.log('click tweet')
     })
 
 }
 
-const clickBackToTweetsArrow = (backtoTweetsArrow) => {
-    backtoTweetsArrow.addEventListener('click',()=> {
-        console.log('click backarrow')
-    })
-}
 
 export default {
     clickNavigate_tweetBtn, renderCreateNewTweetBox
