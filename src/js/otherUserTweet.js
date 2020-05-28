@@ -5,6 +5,7 @@ import retweet from '../images/retweet.svg'
 import backArrow from '../images/backarrow.svg'
 import updateReacts from './updateReacts'
 import GoToTweets from './goBackToTweets'
+import MessageBtn from '../images/createNewMessage.png';
 
 const content = document.querySelector('.content')
 
@@ -38,6 +39,15 @@ const renderEachTweet = async tweet => {
 
     const comments = await renderComment(tweet.comments)
     content.appendChild(comments)
+
+    renderMessageBtn()
+}
+
+const renderMessageBtn = () => {
+    const messageBtn = document.createElement('img')
+    messageBtn.className = 'messageBtn' 
+    messageBtn.src = MessageBtn
+    content.appendChild(messageBtn)
 }
 
 
@@ -65,6 +75,8 @@ const renderComment = async (comments) => {
    
     return commentDiv        
 }
+
+
 
 const renderDOM = (tweet) => {
     let username = tweet.user.name.split(" ").join("").toLowerCase()
