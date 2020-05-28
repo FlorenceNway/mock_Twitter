@@ -47,7 +47,6 @@ const renderComment = async (comments) => {
    
     comments.forEach((comment) => {
         const commentUser = users.filter(user => user.id === comment.userId)
-        console.log(commentUser)
         const comment_div = `<div class='comment'>
                                 <div class='profile'>
                                     <div class="avatar">
