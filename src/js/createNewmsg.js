@@ -14,14 +14,13 @@ const clickCreateNewmsg = (tweet) => {
 
         const TweetCommentBtn = document.querySelector('.replyBtn')
         TweetCommentBtn.innerText = 'Tweet'
-        const numOfcomments = document.querySelector('.comment_Btn').innerText
+        const numOfcomments = document.querySelector('.comment_Btn')
         createNewMsg(commentBox, tweet.id, tweet.userId, numOfcomments, TweetCommentBtn)
     })
     
 }
 
 const createNewMsg = (commentBox,TweetId,UserId,numOfcomments,Btn) => {
-    console.log(numOfcomments, typeof numOfcomments)
     UpdateComment.submitComment(commentBox,TweetId,UserId,numOfcomments,Btn)
     UpdateComment.backward()
 }
