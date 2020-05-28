@@ -4,18 +4,45 @@
     bottom: 10px;
 }
 
-.navigateArea {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    border: 1px solid $yellow;
-
-    .createNewTweetBtn {
-        padding: 8px 17px;
-        border-radius : 5px;
-        background-color: $yellow;
-        font-size: $s-size;
+.tweetAsUwish {
+    height: 380px;
+    background: url('../images/path.svg') no-repeat;
+    .navigateArea {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        border: 1px solid $yellow;
+    
+        .createNewTweetBtn {
+            padding: 8px 17px;
+            border-radius : 5px;
+            background-color: $yellow;
+            font-size: $s-size;
+        }
     }
+    .tweetText {
+        display: flex;
+        justify-content: center;
+
+        textarea {
+            background-color: transparent;
+            border: 1px solid yellow;
+            border-radius : 5px;
+            margin-top: 20px;
+            width: 80%;
+            color: $yellow;
+            padding: 10px;
+            font-size: $s-size;
+
+            &::placeholder {
+                font-size: $s-size;
+                font-weight: bold;
+            }
+        }
+    }
+    
+
 }
+
 
 
