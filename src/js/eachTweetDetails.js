@@ -28,15 +28,16 @@ const clickTweet = tweet => {
 }
 
 const renderEachTweet = async tweet => {
+    console.log('tweet',tweet)
     content.innerHTML=''
     const container = document.querySelector('.container')
     container.style.backgroundColor = '#000'
     
-    const div = document.createElement('div')
-    div.className = 'subTweet'
-    const subdiv = renderTweet(tweet)
-    div.innerHTML = subdiv            
-    content.appendChild(div)
+    const subtweet = document.createElement('subtweet')
+    subtweet.className = 'subTweet'
+    const tweetDetail = renderTweet(tweet)
+    subtweet.innerHTML = tweetDetail            
+    content.appendChild(subtweet)
 
     const commentHeader = document.createElement('div')
     commentHeader.innerHTML = ` <h4 class="commentTitle">COMMENTS</h4>`
@@ -46,7 +47,7 @@ const renderEachTweet = async tweet => {
     content.appendChild(comments)
 
     renderMessageBtn()
-    CreateNewMsg.clickCreateNewmsg()
+    CreateNewMsg.clickCreateNewmsg(tweet)
 }
 
 const renderComment = async (comments) => {
@@ -76,7 +77,7 @@ const renderComment = async (comments) => {
 
 const renderTweet = (tweet) => {
     let username = tweet.user.name.split(" ").join("").toLowerCase()
-    const subdiv = `
+    const tweetDetail = `
                     <div class="backword">
                         <div class='arrowText'>
                             <img src=${backArrow} alt="backArrow" class='backToTweets'>
@@ -103,7 +104,7 @@ const renderTweet = (tweet) => {
                             <p id=${tweet.user.id}><img src=${comment} alt='comments'id=${tweet.id}><span class='comment_Btn'>${tweet.comments.length}</span></p>
                         </div>
                     </div>`
-    return subdiv
+    return tweetDetail
 }
 
 const renderMessageBtn = () => {
