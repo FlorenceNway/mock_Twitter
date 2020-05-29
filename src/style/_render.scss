@@ -70,7 +70,10 @@
 .tweets {
     position:absolute;
     top: 175px;
-}
+    background: url('../images/boystanding.svg') no-repeat;
+    background-position: top 217px left 3px;
+//     background-position: top 217px left 10px, top 10px right 10px, bottom 10px right 10px, bottom 10px left 10px;
+    }
 .tweet {
     width: 80%;
     height: auto;
