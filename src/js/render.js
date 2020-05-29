@@ -36,6 +36,7 @@ const renderTweetpage = (user,users,tweets) => {
         content.innerHTML = ''
         const container = document.querySelector('.container')
         container.style.backgroundColor = '#fff'
+        container.classList.remove('backgroundImage') //for different background style on different page
 
         const userInfo = document.createElement('div')
         userInfo.classList.add('userInfo')
