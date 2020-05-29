@@ -1,4 +1,4 @@
-# Twitter Project
+# Twitter 
 
 This is a mock Twitter!
 
@@ -14,9 +14,6 @@ npm start
 
 This will start `json-server` at `localhost:3000` and a Webpack server at `localhost:8080`.
 
-## Figma project
-see the design here:
-https://www.figma.com/file/XZaHZskW8etyyJsdmcmlR5/Twitter-app?node-id=0%3A1
 
 
 ## Features
@@ -37,25 +34,4 @@ https://www.figma.com/file/XZaHZskW8etyyJsdmcmlR5/Twitter-app?node-id=0%3A1
 * Comment
   * Increase number  
 
-### API Relationships
 
-To include children resources, add `_embed`
-
-```
-GET /tweets?_embed=comments
-GET /tweets/1?_embed=comments
-```
-
-To include a parent resource, add `_expand`
-
-```
-GET /comments?_expand=tweet
-GET /comments/1?_expand=tweet
-```
-
-To get or create nested resources
-
-```
-GET  /tweets/1/comments
-POST /tweets/1/comments
-```
