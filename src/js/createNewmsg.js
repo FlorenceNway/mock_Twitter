@@ -22,27 +22,22 @@ const clickCreateNewmsg = (tweet) => {
         const numOfcomments = document.querySelector('.comment_Btn')
 
         createNewMsg(commentBox, tweet.id, tweet.userId, numOfcomments, TweetCommentBtn)
-
-        TweetCommentBtn.addEventListener('click', () => {
-           renderUpdatedComment(tweet)
-        })
+        renderUpdatedComment(tweet,TweetCommentBtn)
         
-        
-        const pop = []
-        pop[0] = tweet.comments.pop()
-        //console.log(pop)
-        //const comments = await EachTweetDetails.renderComment(pop)
-       // content.appendChild(comments)
     })
 }
 
-const renderUpdatedComment = (tweet) => {
-    setTimeout(async()=> {
-        const tweetsC = await API.getSubTweet(tweet.id)
-        console.log('getSubTweet',tweetsC)
-
-    },2000)
+const renderUpdatedComment = (tweet,TweetCommentBtn) => {
+    TweetCommentBtn.addEventListener('click', async() => {
+        const updatedTweet = await API.getSubTweet(tweet.id)
+        const lastComment = []
+        lastComment[0] = updatedTweet.comments.pop()
+        
+        const comments = await EachTweetDetails.renderComment(lastComment)
+        content.appendChild(comments)
+    })
 }   
+
 
 const createNewMsg = (commentBox,TweetId,UserId,numOfcomments,Btn) => {
     UpdateComment.submitComment(commentBox,TweetId,UserId,numOfcomments,Btn)
