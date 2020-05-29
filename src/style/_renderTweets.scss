@@ -1,0 +1,112 @@
+
+.contentBg {
+    background-color: $white;
+}
+
+.userInfo {
+    color:$white;
+    display: flex;
+    width: 100%;
+    height: 272px;
+    background: no-repeat center url('../images/TopBackground.svg');
+    background-size: cover;
+}
+
+.avatar {
+    width: 26%;
+    height: 95px;
+    margin: 30px 5px 0 10px;
+    border-radius: 50%;
+    background: no-repeat center url('../images/camera.png') $yellow;
+
+    input {
+        width: 90%;
+        margin: 7px 0 0 5px;
+        min-height: 90%;
+        min-width: 90%;
+        opacity: 0;
+        cursor: pointer;
+    }
+}
+.userDetail {
+    display: flex;
+    flex-wrap: wrap;
+    width: 72%;
+    height: 30%;
+    font-family: 'Roboto', sans-serif;
+    margin: 30px 5px;
+    font-weight: 100;
+    position:relative;
+
+    p {
+        padding: 6px 8px 15px;
+        &:first-child {
+            width: 100%;
+            font-size: $m-size;
+            font-style: initial;
+        }
+        &:nth-child(2),&:nth-child(3) {
+            margin: -10px 0;
+            font-style: italic;
+        }
+        &:nth-child(4),&:nth-child(5) {
+            margin: 12px 0;
+            border-bottom: 1px solid purple;
+            width: 40%;
+            position: relative;
+            font-size: $xs-size;
+        }
+    }   
+    &::after {
+        content: '';
+        display: block;
+        border-bottom: 1px solid #f9f5f5d9;
+        width: 60%;
+        position: absolute;
+        top: 125px;
+    } 
+}
+// ============= TWEETS ==============================
+.tweets {
+    position:absolute;
+    top: 175px;
+    background: url('../images/boystanding.svg') no-repeat;
+    background-position: top 217px left 3px;
+//     background-position: top 217px left 10px, top 10px right 10px, bottom 10px right 10px, bottom 10px left 10px;
+    }
+.tweet {
+    width: 80%;
+    height: auto;
+    margin: 15px auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 5px;
+    background-color: $white;
+    
+    .user_data {
+        background-color: #FAFF00;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+
+        p:first-child {
+            font-style: italic;
+            font-weight: bold;
+        }
+    }
+    .tweetContent {
+        min-height: 70px;
+        height: auto;
+        padding: 15px;
+    }
+    .like_share {
+        display: flex;
+        width: 70%;
+        margin: auto;
+        justify-content: space-evenly;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+    }
+
+}
