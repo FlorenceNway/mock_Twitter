@@ -9,6 +9,7 @@ import MessageBtn from '../images/createNewMessage.png'
 import CreateNewMsg from './createNewmsg'
 
 const content = document.querySelector('.content')
+content.classList.add('bgImage')
 
 const clickTweet = tweet => {
     tweet.addEventListener('click',async () => {
