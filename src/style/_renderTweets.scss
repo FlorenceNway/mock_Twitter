@@ -70,13 +70,13 @@
 .tweets {
     position: absolute;
     top: 175px;
-    background-image: url(images/boystanding.svg), 
-                        url(images/TweetPolygon1.svg), 
-                        url(images/TweetPolygon2Pu.svg), 
-                        url(images/TweetPolygon3.svg);
+    background-image: url('../images/boystanding.svg'), 
+                        url('../images/TweetPolygon1.svg'), 
+                        url('../images/TweetPolygon2Pu.svg'), 
+                        url('../images/TweetPolygon3.svg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: top 392px left 3px,top 330px left 150px,top 650px left 0px,top 491px right 0px;
+    background-position: top 404px left 3px,top 330px left 150px,top 650px left 0px,top 491px right 0px;
     }
 .tweet {
     width: 80%;
