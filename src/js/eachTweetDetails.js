@@ -28,7 +28,6 @@ const clickTweet = tweet => {
 }
 
 const renderEachTweet = async tweet => {
-    console.log('tweet',tweet)
     content.innerHTML=''
     const container = document.querySelector('.container')
     container.style.backgroundColor = '#000'
@@ -115,5 +114,5 @@ const renderMessageBtn = () => {
 }
 
 export default {
-    clickTweet
+    clickTweet, renderComment
 }
