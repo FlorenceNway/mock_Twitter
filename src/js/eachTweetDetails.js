@@ -11,7 +11,6 @@ import CreateNewMsg from './createNewmsg'
 const content = document.querySelector('.content')
 
 const clickTweet = tweet => {
-  
     tweet.addEventListener('click',async () => {
        const oneTweet = await API.getSubTweet(tweet.id)
        renderEachTweet(oneTweet)
@@ -26,6 +25,7 @@ const clickTweet = tweet => {
        GoBackToTweets.goToTweets(back_arrow)
     })
 }
+
 
 const renderEachTweet = async tweet => {
     content.innerHTML=''
@@ -49,6 +49,7 @@ const renderEachTweet = async tweet => {
     CreateNewMsg.clickCreateNewmsg(tweet)
 }
 
+
 const renderComment = async (comments) => {
     const users = await API.getUsers()
     const commentDiv = document.createElement('div')
@@ -70,7 +71,6 @@ const renderComment = async (comments) => {
                             </div>`
         commentDiv.innerHTML += comment_div                    
     })   
-   
     return commentDiv        
 }
 
@@ -112,6 +112,7 @@ const renderMessageBtn = () => {
     messageBtn.src = MessageBtn
     content.appendChild(messageBtn)
 }
+
 
 export default {
     clickTweet, renderComment
