@@ -1,3 +1,13 @@
+.bgImage {
+        background-image:   url('../images/girlsitting.svg'),
+                            url('../images/TweetPolygon1.svg'), 
+                            url('../images/TweetPolygon2Pu.svg'), 
+                            url('../images/TweetPolygon3.svg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: bottom 185px center,top 339px center,bottom 80px left 0px,top 491px right 0;;
+}
+
 .subTweet {
     color: $white;
 
