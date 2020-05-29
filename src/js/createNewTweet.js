@@ -26,6 +26,8 @@ const clickNavigate_tweetBtn = () => {
 }
 
 const renderCreateNewTweetBox = () => {
+    const container = document.querySelector('.container')
+    container.classList.add('backgroundImage')  
     const div = `<div class="tweetAsUwish">
                     <div class='navigateArea'>
                         <img src=${backArrow} alt="backArrow" class='backtotweets'>
