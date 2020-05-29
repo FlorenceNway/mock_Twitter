@@ -3,11 +3,21 @@
     right: 10px;
     bottom: 10px;
 }
+.backgroundImage {
+    background-image:   url('../images/boywithmen.svg'),
+                        url('../images/menstanding.svg'), 
+                        url('../images/TweetPolygon1.svg'), 
+                        url('../images/TweetPolygon2Pu.svg'), 
+                        url('../images/TweetPolygon3.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom 0px left 90px,bottom 0px left 144px,top 339px center,bottom 80px left 0px,top 491px right 0;
 
+}
 .tweetAsUwish {
     height: 380px;
     background: url('../images/path.svg') no-repeat;
-
+    
     .navigateArea {
         display: flex;
         justify-content: space-between;
