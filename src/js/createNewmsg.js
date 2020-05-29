@@ -6,7 +6,6 @@ const content = document.querySelector('.content')
 
 const clickCreateNewmsg = (tweet) => {
     const newMsgBtn = document.querySelector('.messageBtn')
-   
     newMsgBtn.addEventListener('click', async () => {
         const commentBox = UpdateComment.renderQuickComment()
         const siblingnode = document.querySelector('.bodyText')
@@ -22,11 +21,11 @@ const clickCreateNewmsg = (tweet) => {
         const numOfcomments = document.querySelector('.comment_Btn')
 
         createNewMsg(commentBox, tweet.id, tweet.userId, numOfcomments, TweetCommentBtn)
-        renderUpdatedComment(tweet,TweetCommentBtn)
-        
+        renderUpdatedComment(tweet,TweetCommentBtn) 
     })
 }
 
+//Render the updated comment right after the user commented by hitting tweet button
 const renderUpdatedComment = (tweet,TweetCommentBtn) => {
     TweetCommentBtn.addEventListener('click', async() => {
         const updatedTweet = await API.getSubTweet(tweet.id)
@@ -38,10 +37,10 @@ const renderUpdatedComment = (tweet,TweetCommentBtn) => {
     })
 }   
 
-
+//Submit the new message to the API and update the number of comments
 const createNewMsg = (commentBox,TweetId,UserId,numOfcomments,Btn) => {
     UpdateComment.submitComment(commentBox,TweetId,UserId,numOfcomments,Btn)
-    UpdateComment.backward()
+    UpdateComment.backward() //Back Arrow to remove the comment box
 }
 
 export default {
