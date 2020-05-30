@@ -19,8 +19,9 @@ const clickCreateNewmsg = (tweet) => {
         TweetCommentBtn.innerText = 'Tweet'
 
         const numOfcomments = document.querySelector('.comment_Btn')
+        const user = JSON.parse(localStorage.getItem('user')) //login User
 
-        createNewMsg(commentBox, tweet.id, tweet.userId, numOfcomments, TweetCommentBtn)
+        createNewMsg(commentBox, tweet.id, user[0].id, numOfcomments, TweetCommentBtn)
         renderUpdatedComment(tweet,TweetCommentBtn) 
     })
 }
