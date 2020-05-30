@@ -24,7 +24,7 @@ This will start `json-server` at `localhost:3000` and a Webpack server at `local
 * Create a new tweet
   * Where the `userId` is the ID of the logged in user
 * Update avatar on avatar click
-  * On your profile page, click the avatar to open a file dialog, the user can select an image file, which is displayed as the new avatar
+  * On your profile page, click the avatar to open a file dialog, you can select an image file, which is displayed as the new avatar
 * Leave a comment
   * Where the `tweetId` is the tweet which the comment belongs to and the `userId` is the ID of the logged in user
 * Like
@@ -33,5 +33,4 @@ This will start `json-server` at `localhost:3000` and a Webpack server at `local
   * Increase number
 * Comment
   * Increase number  
-
 
