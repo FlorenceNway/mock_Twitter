@@ -1,16 +1,19 @@
+const API_ENDPOINT = "http://localhost:3000"
+const USERS_URL = `${API_ENDPOINT}/users?_embed=tweets`
+const TWEETS_URL = `${API_ENDPOINT}/tweets/?_embed=comments`
+const SUBTWEETS_URL = `${API_ENDPOINT}/tweets`
+const COMMENTS_URL = `${API_ENDPOINT}/comments`
 
-const dotenv = require('dotenv');
-dotenv.config();
+//const TWEETS_URL = `${API_ENDPOINT}/tweets?_expand=user&_embed=comments`
 
 const d = new Date()
 const yy = d.getFullYear()
 const mm = d.getMonth() + 1
 const dd = d.getDate()
 
-
-const getTweets = async () => await fetch(process.env.TWEETS_URL).then(res => res.json())
-const getUsers = async () => await fetch(process.env.USERS_URL).then(res => res.json())
-const getSubTweet = async(tweetId) => await fetch(`${process.env.SUBTWEETS_URL}/${tweetId}?_expand=user&_embed=comments`).then(res => res.json())
+const getTweets = async () => await fetch(TWEETS_URL).then(res => res.json())
+const getUsers = async () => await fetch(USERS_URL).then(res => res.json())
+const getSubTweet = async(tweetId) => await fetch(`${SUBTWEETS_URL}/${tweetId}?_expand=user&_embed=comments`).then(res => res.json())
 
 const patchReact = async (id,newReacts) => {
     const configObject = {
@@ -21,7 +24,7 @@ const patchReact = async (id,newReacts) => {
         body: JSON.stringify(newReacts)
       };
       
-    return await fetch(`${process.env.SUBTWEETS_URL}/${id}?_embed=comments`, configObject)
+    return await fetch(`${SUBTWEETS_URL}/${id}?_embed=comments`, configObject)
     .then((response) => {
         if(response.ok) {
             return response.json()
@@ -46,7 +49,7 @@ const postComment = async(userId,tweetId,newComment) => {
         })
     }
 
-    return await fetch(process.env.COMMENTS_URL, configObject)
+    return await fetch(COMMENTS_URL, configObject)
     .then(response => {
         if(response.ok) {
             return response.json()
@@ -72,7 +75,7 @@ const postTweet = async(userId,newTweet) => {
         })
     }
 
-    return await fetch(`${process.env.SUBTWEETS_URL}`, configObject)
+    return await fetch(`${SUBTWEETS_URL}`, configObject)
     .then(response => {
         if(response.ok) {
             return response.json()
